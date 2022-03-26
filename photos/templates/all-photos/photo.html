@@ -1,0 +1,17 @@
+{%extends 'all-photos/base.html' %}
+
+{% block content %}
+
+<!--looping through photo-->
+<div class="container">
+  <div class="row">
+    {% for pics in photo %}
+    <div class="col-md-3 single_portfolio_text">
+      <img src="{{pics.image.url}}" alt="" class="img-responsive">
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{%endblock%}
+
