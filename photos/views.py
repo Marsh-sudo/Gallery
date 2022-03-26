@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import datetime as dt
+
 
 
 
 # Create your views here.
 def my_Photo(request):
-    return HttpResponse("welcome to your gallery")
+    return render(request ,'welcome.html')
+
+
