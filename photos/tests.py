@@ -1,3 +1,4 @@
+from email.mime import image
 from unicodedata import category
 from django.test import TestCase
 from .models import Location,Category,Image
@@ -54,3 +55,7 @@ class ImageTestClass(TestCase):
         Image.delete_image(self.new_image)
         image = Image.objects.all()
         self.assertTrue(len(image) == 0)
+
+    def test_search_image_by_category(self):
+        image = Image.search_image_by_category("travel")
+        self.assertFalse(len(image) > 0)
