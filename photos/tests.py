@@ -1,3 +1,4 @@
+from unicodedata import category
 from django.test import TestCase
 from .models import Location,Category,Image
 
@@ -21,3 +22,9 @@ class LocationTestClass(TestCase):
         Location.delete_location(self.new_location.id)
         locations = Location.objects.all()
         self.assertTrue(len(locations) == 0)
+
+
+class CategoryTestClass(TestCase):
+    def setUp(self):
+        self.category = Category(category_name = 'travel')
+        self.category.save()
