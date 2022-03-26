@@ -17,3 +17,10 @@ class Category(models.Model):
 
     def __str__(self):
         return self.category_name
+
+
+class Image(models.Model):
+    img_name = models.CharField(max_length=50)
+    img_desc = models.CharField(max_length=50)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE)
+    category = models.ManyToManyField(Category)
