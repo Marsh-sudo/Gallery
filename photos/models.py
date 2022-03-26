@@ -12,11 +12,18 @@ class Location(models.Model):
     def save_location(self):
         return self.save()
 
+    @classmethod
+    def delete_location(cls,id):
+        return cls.objects.filter(id = id).delete()
+
 class Category(models.Model):
     category_name = models.CharField(max_length=60)
 
     def __str__(self):
         return self.category_name
+
+    def save_category(self):
+        return self.save()
 
 
 class Image(models.Model):
@@ -24,3 +31,4 @@ class Image(models.Model):
     img_desc = models.CharField(max_length=50)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     category = models.ManyToManyField(Category)
+    pub_date = models.DateTimeField(auto_now_add=True)
