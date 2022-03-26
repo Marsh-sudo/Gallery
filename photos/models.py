@@ -32,3 +32,9 @@ class Image(models.Model):
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     category = models.ManyToManyField(Category)
     pub_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.img_name
+
+    def save_image(self):
+        return self.save()
