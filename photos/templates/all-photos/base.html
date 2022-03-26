@@ -1,3 +1,6 @@
+{% load bootstrap3 %}
+{% load static%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +12,13 @@
     {% else %}
        <title>Document</title>
     {% endif %}
+
+    {% block styles %}
+      {% bootstrap_css %}
+    {% endblock %}
 </head>
 <body>
+    {% include "navbar.html" %}
     
   {% block content %}
 
