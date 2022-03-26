@@ -27,8 +27,8 @@ class Category(models.Model):
 
 
 class Image(models.Model):
-    img_name = models.CharField(max_length=50)
-    img_desc = models.CharField(max_length=50)
+    img_name = models.CharField(max_length=60)
+    img_desc = models.CharField(max_length=60)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     category = models.ManyToManyField(Category)
     pub_date = models.DateTimeField(auto_now_add=True)
