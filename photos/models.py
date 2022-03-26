@@ -42,3 +42,12 @@ class Image(models.Model):
     @classmethod
     def delete_image(cls,id):
         return cls.objects.filter(id = id).delete()
+
+    @classmethod
+    def get_image_by_id(cls,id):
+        return cls.objects.filter(id = id).all()
+
+    @classmethod
+    def search_image_by_category(cls,category):
+        album = cls.objects.filter(category_category_name = category)
+        return album
