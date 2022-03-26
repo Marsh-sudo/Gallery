@@ -38,3 +38,7 @@ class Image(models.Model):
 
     def save_image(self):
         return self.save()
+    
+    @classmethod
+    def delete_image(cls,id):
+        return cls.objects.filter(id = id).delete()
