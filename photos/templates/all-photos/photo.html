@@ -7,11 +7,16 @@
   <div class="row">
     {% for pics in photo %}
     <div class="col-md-3 single_portfolio_text">
-      <img src="{{pics.image.url}}" alt="" class="img-responsive">
+      <a href="{{pics.image.url}}">
+        <img src="{{pics.image.url}}" alt="" class="img-responsive">
+      </a>
+      <!-- <img src="{{pics.image.url}}" alt="" class="img-responsive"> -->
     </div>
+   
     {% endfor %}
+    
   </div>
-</div>
+  
 
 {%endblock%}
 
