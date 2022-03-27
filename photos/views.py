@@ -15,9 +15,9 @@ def my_Photo(request):
 
 
 def search_results(request):
-    if 'search' in request.GET and request.GET["search"]:
-        category = request.GET.get("search")
-        searched_image = Image.search_image_by_category(category)
+    if 'category' in request.GET and request.GET["category"]:
+        search_term = request.GET.get("category")
+        searched_image = Image.search_image_by_category(search_term)
         locations = Location.objects.all()
         message = f"{category}"
 
