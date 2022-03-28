@@ -1,6 +1,6 @@
 ## GALLERY
 
-## DESCRIPTION
+# DESCRIPTION
 An application where a User can see various awesome photos and be able to post others using the admin system.
 
 ## Getting Started
